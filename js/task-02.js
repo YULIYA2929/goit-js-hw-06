@@ -1,17 +1,6 @@
-const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
-];
-
-const list = document.querySelector("#ingredients");
-
-ingredients.forEach((ingredient) => {
-	const listItem = document.createElement("li");
-	listItem.textContent = `${ingredient}`;
-	listItem.classList.add("item");
-	list.append(listItem);
-})
+const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem("Droid");
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem("Prolonger");
+console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
